@@ -192,6 +192,10 @@ d.addEventListener("click", (e) => {
     d.querySelector(".reply").classList.add("display-none");
     d.querySelector(".form").classList.remove("display-none")
   }
+
+  if(e.target.matches(".data__image--print")) {
+    window.print()
+  }
 });
 
 /* 
