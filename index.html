@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <!-- 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+ -->
+  <link rel="stylesheet" href="style.css">
+
+  <title>Frontend Mentor | Conference ticket generator</title>
+
+</head>
+
+<body>
+
+  <main>
+    <img class="image__top" src="assets/images/pattern-squiggly-line-top.svg" alt="">
+    <img class="image__bottom" src="assets/images/pattern-squiggly-line-bottom.svg" alt="">
+    <!-- Form -->
+    <section class="form ">
+      <!-- Form Head -->
+      <section class="head">
+        <img class="head__logo" src="assets/images/logo-full.svg" alt="">
+        <h1 class="head__title"> Your Journey to Coding Conf 2025 Starts Here!</h1>
+        <p class="head__text"> Secure your spot at next year's biggest coding conference.</p>
+      </section>
+      <!-- Form Data -->
+      <section class="data">
+        <label for="" class="data__label">Upload Avatar</label>
+        <article class="data__drag">
+
+          <img class="data__image" id="imageAvatar" src="assets/images/icon-upload.svg" data-image="false"
+            alt="Image Button">
+          <input type="file" name="image" id="inputFile" class="display-none" required>
+          <label for="inputFile" class="data__file ">Drag and drop or click to upload</label>
+          <!-- <p>Drag and drop or click to upload</p> -->
+
+          <article class="data__btns display-none">
+            <button class="data__btns--btn">Remove Image</button>
+            <label for="inputFile" class="data__btns--btn">Change Image</label>
+          </article>
+        </article>
+        <!-- intercambiar displaye debajo segun corresponda -->
+        <p class="data__warning ">Upload your photo (JPG or PNG, max size: 500KB).</p>
+        <p class="data__error data--error display-none" data-info="false">File size too large or non existent. Please upload a photo smaller than
+          500KB</p>
+
+        <form action="">
+          <label for="" class="data__label">Full Name </label>
+          <input autocomplete="off" class="data__input" type="text" name="name" id="name" pattern="^[A-Za-z]">
+
+          <label for="" class="data__label">Email Address</label>
+
+          <!-- agregar o quitar "data__input--error" debajo segun corresponda-->
+          <input autocomplete="off" class="data__input data__input--email " type="email" name="email" id="email"
+            pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?">
+
+          <!-- agregrar o quitar display al P de debajo segun corresponda -->
+          <label for="" class="data__label data__label--git">GitHub Username</label>
+          <input autocomplete="off" class="data__input" type="text" name="user" id="user" pattern="[A-Za-z]">
+
+          <button class="data__btn" type="submit">Generate My Ticket</button>
+        </form>
+      </section>
+    </section>
+
+    <!-- Reply -->
+    <section class="reply display-none">
+      <img class="reply__logo" src="assets/images/logo-full.svg" alt="">
+      <h2 class="reply__title">Congrats, <span id="reply__name"> </span>! Your ticket is ready.</h2>
+      <p class="reply__text">We've emailed your ticket to <span id="reply__email"> </span> and will send updates in the
+        run up to the
+        event.</p>
+      <section class="ticket">
+        <p class="ticket__number">#01609</p>
+        <!-- TICKET HEAD -->
+        <article class="ticket__headline">
+          <img class="headline__image" src="assets/images/logo-mark.svg" alt="">
+          <article class="headline__info">
+            <p class="headline__title">Coding Conf</p>
+            <p class="headline__date">Jan 31, 2025 / Austin, tx</p>
+          </article>
+        </article>
+        <!-- ticket info -->
+        <article class="ticket__info">
+          <img class="info__img" src="" alt="">
+          <article class="info__data">
+            <p class="info__name"></p>
+            <article class="info__contact">
+              <img src="assets/images/icon-github.svg" alt="">
+              <p></p>
+            </article>
+          </article>
+        </article>
+
+      </section>
+      <img class="data__image data__image--back" id="imageAvatar" src="assets/images/icon-back.svg" alt="Image Button">
+
+    </section>
+  </main>
+
+  <footer>
+    <p class="footer__text">Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.<br>
+      Coded by <a href="#">Pablo Zallio Web Developer</a>.</p>
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>
+
+
+
+<!-- 
+
+  <div class="container">
+    <input type="button" value="Hola" src="assets/images/icon-upload.svg" hidden>
+    <button><img src="assets/images/icon-upload.svg"></button>
+
+  </div>
+
+  <!-- Form starts -->
+
+<!--  Your Journey to Coding Conf 2025 Starts Here!
+
+  Secure your spot at next year's biggest coding conference.
+
+  Upload Avatar
+  Drag and drop or click to upload
+  Upload your photo (JPG or PNG, max size: 500KB).
+
+  Full Name
+
+  Email Address
+  example@email.com
+
+  GitHub Username
+  @yourusername
+
+  Generate My Ticket -->
+
+<!-- Form ends -->
+
+<!-- Generated tickets starts -->
+
+<!--   Congrats, Full Name ! Your ticket is ready.
+
+  We've emailed your ticket to  Email Address  and will send updates in the run up to the event.
+
+  Coding Conf
+  Jan 31, 2025 / Austin, TX -->
+
+<!-- Generated tickets ends -->

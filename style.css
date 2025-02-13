@@ -1,0 +1,768 @@
+/*------------------------------------*\
+  #CUSTOM-PROPERTIES
+\*------------------------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+:root {
+  /* Colors */
+
+  --Neutral-0: hsl(0, 0%, 100%);
+  --Neutral-300: hsl(252, 6%, 83%);
+  --Neutral-500: hsl(245, 15%, 58%);
+  --Neutral-700-50: hsla(245, 19%, 35%, 0.489);
+  --Neutral-700-75: hsla(245, 19%, 35%, 0.734);
+
+  --Neutral-700: hsl(245, 19%, 35%);
+  --Neutral-900: hsl(248, 70%, 10%);
+
+  --Orange-500: hsl(7, 88%, 67%);
+  --Orange-700: hsl(7, 50%, 53%);
+
+  /* 
+
+- Gradient (text): hsl(7, 86%, 67%) to hsl(0, 0%, 100%) 
+
+- Font size (labels): 20px 
+
+*/
+
+  /* Font */
+  --font-primary: "Inconsolata", serif;
+}
+
+/*------------------------------------*\
+    #RESET
+  \*------------------------------------*/
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: var(--font-primary);
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+  color: var(--Neutral-0);
+}
+
+/*------------------------------------*\
+#COMPONENTS
+\*------------------------------------*/
+
+/*------------------------------------*\
+#UTILITIES
+\*------------------------------------*/
+/***************\
+#Mobile - 320px - XS
+\***************/
+
+body {
+  height: 100vh;
+
+}
+
+
+main {
+  position: relative;
+  background-image: url(assets/images/background-mobile.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+
+}
+
+.image__bottom,
+.image__circle,
+.image__top {
+  position: absolute;
+}
+
+.image__bottom {
+  height: 200px;
+  bottom: 0;
+  z-index: 50;
+}
+
+.image__circle {
+  height: 108px;
+  right: -45px;
+  bottom: 340px;
+}
+
+.image__top {
+  height: 50px;
+  top: 25px;
+  right: 0;
+}
+/* *************************************************************** 
+   ************************* FORM ******************************** 
+   *************************************************************** */
+   form {
+    width: 100%;
+   }
+
+.form {
+  position: relative;
+  z-index: 90;
+  background-image: url(assets/images/pattern-lines.svg);
+  background-position: top;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: center;
+  width: 100%;
+ 
+}
+
+/* *************************************************************** 
+   ************************* DATA ******************************** 
+   *************************************************************** */
+
+.data {
+  /* border: 1px solid orange; */
+  display: flex;
+  width: 100%;
+  max-width: 30.4rem;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 1rem;
+}
+
+.data__btn {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--Orange-500);
+  border: none;
+  color: var(--Neutral-900);
+  font-weight: 800;
+  font-family: var(--font-primary);
+  font-size: 1.15rem;
+  border-radius: 10px;
+  margin-bottom: 4rem;
+  transition: background-color .1s  ease-in;
+}
+
+.data__btns {
+  gap: 0.5rem;
+}
+
+.data__btns--btn {
+  width: 5.4rem;
+  font-size: 0.55rem;
+  padding: 0;
+  background-color: var(--Neutral-700-50);
+  border: none;
+  padding: 0.3rem;
+  border-radius: 0.3rem;
+  color: var(--Neutral-500);
+  font-weight: 500;
+}
+
+.data__drag {
+  width: 100%;
+  height: 7.2rem;
+  margin: 0 auto;
+  background-color: var(--Neutral-700-50);
+  border: 2px dashed var(--Neutral-700);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.data__drag--active {
+  background-color: var(--Neutral-700-75);
+  outline: 1px solid var(--Neutral-500);
+  outline-offset: 2px;
+}
+
+.data__drag--btn {
+  border: 1px solid var(--Neutral-700);
+  background-color: var(--Neutral-700-50);
+  border-radius: 10px;
+  padding: 0.45rem;
+}
+
+.data__drag button img {
+  width: 1.9rem;
+  height: 1.7rem;
+}
+
+.data__error {
+  color: var(--Orange-700);
+}
+
+.data__input {
+  border: 1px solid var(--Neutral-700);
+  background-color: var(--Neutral-700-50);
+  width: 100%;
+  padding: 1rem;
+  border-radius: 10px;
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  color: var(--Neutral-300);
+  margin-bottom: 1.5rem;
+  margin-top: .5rem;
+}
+
+.data__input--email {
+  margin-bottom: 1.5rem;
+}
+
+
+
+/* Solo cuando el mail de error se le agragara esta clase al input correspondiente */
+.data__input--error {
+  border: 1px solid var(--Orange-700);
+}
+
+.data__image{
+  border: 1px solid var(--Neutral-500);
+  background-color: var(--Neutral-700);
+  border-radius: 10px;
+  width: 50px;
+  height: 50px;
+  padding: .5rem;
+} 
+
+.data__image--padding {
+  padding: 0;
+}
+.data__label {
+  margin-bottom: 0.8rem;
+}
+
+.data__label--git {
+  margin-top: 1.5rem;
+}
+
+.data__warning,
+.data__error,
+.data__error--email {
+  font-size: 0.68rem;
+  color: var(--Neutral-500);
+  margin: 0.5rem 0 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.data__error--email {
+  margin-top: -1rem;
+}
+
+.data__warning::before,
+.data__error::before {
+  content: url(assets/images/icon-info.svg);
+}
+
+.data__error,
+.data__error--email {
+  color: var(--Orange-500);
+}
+
+.data__error::before,
+.data__error--email::before {
+  content: url(assets/images/icon-info-error.svg);
+  color: var(--Orange-700);
+}
+
+/* Al data drag le daremos las mismas propiedades cuando este el archivo encima */
+
+input:focus {
+  outline: 1px solid var(--Neutral-500);
+  outline-offset: 2px;
+}
+
+
+/* *************************************************************** 
+   ************************* HEAD ******************************** 
+   *************************************************************** */
+.head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 1px orange solid; */
+  width: 20rem;
+}
+
+.head__logo {
+  width: 10rem;
+  margin: 2rem 0 2.4rem;
+}
+.head__text {
+  color: var(--Neutral-300);
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.3rem;
+}
+
+.head__title {
+  font-size: 1.7rem;
+  text-align: center;
+  margin-bottom: 1.4rem;
+}
+
+/* *************************************************************** 
+   ************************* REPLY ******************************** 
+   *************************************************************** */
+
+.reply {
+  position: relative;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.reply__logo {
+  width: 10rem;
+  margin: 2.2rem 0 2.8rem;
+}
+
+.reply__text {
+  text-align: center;
+  color: var(--Neutral-300);
+  font-size: 1.1rem;
+  width: 90%;
+  margin-bottom: 4.5rem;
+}
+
+.reply__title {
+  text-align: center;
+  font-size: 1.75rem;
+  width: 90%;
+  margin-bottom: 1.6rem;
+}
+
+.reply__title span {
+  background: linear-gradient(hsl(7, 86%, 67%), hsl(0, 0%, 100%));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+#reply__email {
+  color: var(--Orange-700);
+}
+
+/* *************************************************************** 
+   ************************* TICKET BODY******************************** 
+   *************************************************************** */
+
+.ticket {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: url(assets/images/pattern-ticket.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 18rem;
+  height: 8.5rem;
+  padding: 1rem;
+  margin-bottom: 5rem;
+}
+
+.ticket__headline {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+
+.headline__image {
+  width: 1.9rem;
+  align-self: flex-start;
+  margin-top: 0.2rem;
+}
+
+.headline__title {
+  font-weight: 700;
+  font-size: 1.5rem;
+  padding-bottom: 0.8rem;
+}
+
+.headline__date {
+  font-size: 0.85rem;
+  color: var(--Neutral-500);
+}
+
+.ticket__info {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.info__contact {
+  display: flex;
+  gap: 0.25rem;
+  margin-top: 0.25rem;
+}
+
+.info__contact p {
+  font-size: 0.8rem;
+  color: var(--Neutral-500);
+  display: flex;
+  align-items: center;
+}
+
+.info__contact img {
+  width: 1rem;
+}
+
+.info__img {
+  width: 2.2rem;
+  border-radius: 5px;
+}
+
+.ticket__number {
+  position: absolute;
+  rotate: 90deg;
+  top: 54px;
+  right: -6px;
+  color: var(--Neutral-500);
+  font-size: 1.3rem;
+}
+
+.ticket__pattern {
+  width: 18rem;
+}
+
+/* *************************************************************** 
+   ************************* FOOTER ******************************** 
+   *************************************************************** */
+
+.footer__text {
+  background-color: #000;
+  font-size: 0.65rem;
+  text-align: center;
+  padding: 0.75rem 0;
+  line-height: 1rem;
+}
+
+.footer__text a {
+  font-weight: 800;
+  text-decoration: none;
+}
+
+/****************\
+  #Tablet - 640px - S
+  \****************/
+
+@media (640px < width) {
+}
+
+/******************\
+  #Tablet L - 768px - M
+  \******************/
+
+@media (767px < width) {
+  /* *************************************************************** 
+   ************************* DATA ******************************** 
+   *************************************************************** */
+
+  .data__btn {
+    /* margin-bottom: 2rem; */
+  }
+  /* *************************************************************** 
+   ************************* REPLY ******************************** 
+   *************************************************************** */
+
+  .reply__text {
+    text-align: center;
+    color: var(--Neutral-300);
+    font-size: 1.25rem;
+    width: 50%;
+  }
+
+  /* *************************************************************** 
+   ************************* TICKET / BODY ******************************** 
+   *************************************************************** */
+
+  .ticket {
+    width: 21rem;
+    height: 10.5rem;
+    padding: 1.5rem;
+    margin: 0;
+  }
+
+  .ticket__number {
+    top: 65px;
+    right: -3px;
+  }
+}
+
+/******************\
+  #Desktop - 1024px - L
+  \******************/
+
+@media (1023px < width) {
+  main {
+    background-image: url(assets/images/background-tablet.png);
+  }
+
+  .image__bottom {
+    height: 466px;
+    bottom: 0;
+  }
+
+  .image__circle {
+    height: 218px;
+    right: 285px;
+    bottom: 329px;
+  }
+
+  .image__top {
+    height: 202px;
+    top: 80px;
+  }
+
+  /* *************************************************************** 
+   ************************* DATA ******************************** 
+   *************************************************************** */
+
+  .data__drag:hover {
+    background-color: var(--Neutral-700-75);
+  }
+
+  .data__input:hover {
+    cursor: pointer;
+    background-color: var(--Neutral-700-75);
+  }
+
+
+
+  .data__btn {
+    margin-bottom: 2rem;
+  }
+
+  .data__btn:hover {
+    background-color: var(--Orange-700);
+    cursor: pointer;
+  }
+
+  .data__image--back {
+    margin-top: 3rem;
+    cursor: pointer;
+  }
+
+  /* *************************************************************** 
+   ************************* HEAD ******************************** 
+   *************************************************************** */
+
+  .head {
+    width: 48.9rem;
+  }
+
+  .head__logo {
+    margin-bottom: 3.4rem;
+  }
+
+  .head__title {
+    font-size: 3.2rem;
+  }
+
+  /* *************************************************************** 
+   ************************* REPLY ******************************** 
+   *************************************************************** */
+
+  .reply__logo {
+    width: 15rem;
+    margin: 2.2rem 0 4rem;
+  }
+
+  .reply__text {
+    text-align: center;
+    color: var(--Neutral-300);
+    font-size: 1.1rem;
+    width: 35%;
+    line-height: 1.5rem;
+  }
+
+  .reply__title {
+    font-size: 3.2rem;
+    max-width: 80%;
+    margin-bottom: 3rem;
+  }
+
+  /* *************************************************************** 
+   ************************* TICKET / BODY ******************************** 
+   *************************************************************** */
+
+  .ticket {
+    width: 35rem;
+    height: 16rem;
+    padding: 2rem;
+  }
+
+  .ticket__number {
+    top: 108px;
+    right: 19px;
+    font-size: 1.7rem;
+  }
+
+  .ticket__info {
+    align-items: center;
+  }
+
+  .ticket__info {
+    display: flex;
+    gap: 1.8rem;
+}
+
+  .headline__image {
+    width: 2.6rem;
+  }
+
+  .headline__title {
+    font-size: 2.3rem;
+  }
+
+  .headline__date {
+    font-size: 1rem;
+  }
+
+  .info__img {
+    width: 4.5rem;
+    border-radius: 12px;
+  }
+
+  .info__name {
+    font-size: 1.75rem;
+  }
+
+  .info__contact p {
+    font-size: 1.1rem;
+  }
+}
+
+/*********************\
+  #Desktop XL - 1280px - XL
+  \*********************/
+
+@media (1280px < width) {
+  main {
+    background-image: url(assets/images/background-desktop.png);
+  }
+
+  /* *************************************************************** 
+   ************************* REPLY ******************************** 
+   *************************************************************** */
+
+  .reply__text {
+    text-align: center;
+    color: var(--Neutral-300);
+    font-size: 1.1rem;
+    width: 25%;
+  }
+
+  .reply__title {
+    font-size: 4.3rem;
+    max-width: 60%;
+  }
+  /*  */
+}
+
+/*************\
+  #4K - 1536px - XXL
+  \*************/
+
+@media (1600px < width) {
+}
+
+/*------------------------------------*\
+  #SITE-HOVER
+\*------------------------------------*/
+
+/***************\
+  #Mobile - 320px - XS
+  \***************/
+
+/****************\
+  #Tablet - 640px - S
+  \****************/
+
+@media (640px < width) {
+}
+
+/******************\
+  #Tablet L - 768px - M
+  \******************/
+
+@media (768px < width) {
+}
+
+/******************\
+  #Desktop - 1024px - L
+  \******************/
+
+@media (1024px < width) {
+}
+
+/*********************\
+  #Desktop XL - 1280px - XL
+  \*********************/
+
+@media (1280px < width) {
+}
+
+/*************\
+  #4K - 1536px - XXL
+  \*************/
+
+@media (1600px < width) {
+}
+
+/*------------------------------------*\
+  #SITE-STYLES
+\*------------------------------------*/
+
+/***************\
+  #Mobile - 320px - XS
+  \***************/
+
+.display-none {
+  display: none;
+}
+/****************\
+  #Tablet - 640px - S
+  \****************/
+
+@media (640px < width) {
+}
+
+/******************\
+  #Tablet L - 768px - M
+  \******************/
+
+@media (768px < width) {
+}
+
+/******************\
+  #Desktop - 1024px - L
+  \******************/
+
+@media (1024px < width) {
+}
+
+/*********************\
+  #Desktop XL - 1280px - XL
+  \*********************/
+
+@media (1280px < width) {
+}
+
+/*************\
+  #4K - 1536px - XXL
+  \*************/
+
+@media (1600px < width) {
+}
